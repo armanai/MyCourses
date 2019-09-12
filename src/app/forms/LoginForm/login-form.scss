@@ -1,0 +1,20 @@
+.login-form-wrapper{
+    .login-form{
+        padding: 40px 20px;
+        background: #FFFFFF;
+        box-shadow: 0 2px 40px 0 rgba(92,127,156,0.20);
+        margin: 100px auto 100px;
+        max-width: 400px;
+
+        h1{
+            font-size: 20px;
+            color: #5C7F9C;
+            font-weight:bold;
+        }
+
+        .registerOption{
+            font-size: 11px;
+            color: #5C7F9C;
+        }
+    }
+}

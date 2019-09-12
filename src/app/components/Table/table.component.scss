@@ -1,0 +1,24 @@
+.table-responsive{
+    background: #FFFFFF;
+    box-shadow: 0 2px 40px 0 rgba(92,127,156,0.20);
+    padding: 30px 20px;
+
+    .table{
+
+        thead{
+            background-color: #FFFFFF;
+
+            th{
+                border-top: 2px solid #F1F3F4;
+            }
+        }
+
+        th,td{
+            padding: 7px 8px;
+            font-size: 13px;
+            color: #5C7F9C;
+            border-top: 1px solid #F1F3F4;
+            vertical-align: middle;
+        }
+    }
+}
