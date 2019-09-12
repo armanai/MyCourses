@@ -88,7 +88,7 @@ export function register(email, password, firstName, lastName) {
 
 			dispatch(reset('register'))
 
-			dispatch(showAlert('Register failed', false))
+			dispatch(showAlert('Registration failed', false))
 		}
 	}
 }

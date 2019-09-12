@@ -62,7 +62,7 @@ class DashboardPage extends Component {
 	}
 
 	_handleDeleteCourse = id => {
-		this.props.dispatch(deleteCourse(id, this.props.history))
+		this.props.dispatch(deleteCourse(id))
 	}
 
 	_handleEditCourse = id => {

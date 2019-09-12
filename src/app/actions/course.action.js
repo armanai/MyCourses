@@ -13,6 +13,7 @@ import {
 } from './types'
 
 import CourseServices from '../services/course.service'
+import { showAlert } from './alert.action'
 
 export function getCourse(id) {
 	return async dispatch => {
@@ -54,22 +55,22 @@ export function getCourses(userId) {
 	}
 }
 
-export function deleteCourse(id, history = null) {
+export function deleteCourse(id) {
 	return async dispatch => {
 		try {
 			dispatch({ type: DELETE_COURSE })
 
 			const response = await CourseServices.deleteCourse(id)
 
-			if (history) {
-				history.push('/')
-			}
-			console.log(response)
 			dispatch({
 				type: DELETE_COURSE_SUCCESS,
 				payload: response.data
 			})
+
+			dispatch(showAlert('Course successfully deleted.', true))
 		} catch (ex) {
+			dispatch(showAlert('Something went wrong.', false))
+
 			dispatch({
 				type: COURSE_ERROR,
 				payload: ex
@@ -93,7 +94,11 @@ export function updateCourse(course, history = null) {
 				type: EDIT_COURSE_SUCCESS,
 				payload: response.data
 			})
+
+			dispatch(showAlert('Course successfully updated.', true))
 		} catch (ex) {
+			dispatch(showAlert('Something went wrong.', false))
+
 			dispatch({
 				type: COURSE_ERROR,
 				payload: ex
@@ -117,7 +122,11 @@ export function addCourse(course, history = null) {
 				type: ADD_COURSE_SUCCESS,
 				payload: response.data
 			})
+
+			dispatch(showAlert('Course successfully added.', true))
 		} catch (ex) {
+			dispatch(showAlert('Something went wrong.', false))
+
 			dispatch({
 				type: COURSE_ERROR,
 				payload: ex

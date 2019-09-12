@@ -39,9 +39,9 @@ const courses = (state = initialState, action) => {
 				isLoading: false,
 				courses: [
 					...state.courses.filter(
-						course => course.id !== action.payload.data.course.id
+						course => course.id !== action.payload.course.id
 					),
-					action.payload.data.course
+					action.payload.course
 				]
 			}
 		case DELETE_COURSE_SUCCESS:
@@ -50,7 +50,7 @@ const courses = (state = initialState, action) => {
 				isLoading: false,
 				courses: [
 					...state.courses.filter(
-						course => course.id !== action.payload.data.course.id
+						course => course.id !== action.payload.course.id
 					)
 				]
 			}

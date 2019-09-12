@@ -46,7 +46,7 @@ class EditCoursePage extends Component {
 
 function mapStateToProps(state) {
 	const { courses } = state
-	console.log(courses)
+
 	return { courses }
 }
 
